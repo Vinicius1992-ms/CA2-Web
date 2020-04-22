@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "mongoose": "^5.9.10",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "uploads": "0.0.1"
   }
 }

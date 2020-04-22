@@ -1,5 +1,5 @@
 var UPLOAD_PATH = require('./routes').UPLOAD_PATH;
-var Image = require('./mongodb-test/models/image');
+var Image = require('./models/image');
 var path = require('path'),
 fs = require('fs'),
 del = require('del');
