@@ -1,7 +1,7 @@
 {
   "name": "demo_app",
   "version": "0.0.1",
-  "description": "just an in-class app",
+  "description": "update version of CA1",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,25 +9,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gitpod-io/NextSimpleStarter.git"
+    "url": "git+https://github.com/Vinicius1992-ms/CA2-Web.git"
   },
-  "author": "Me",
+  "author": "Vinicius Martins",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gitpod-io/NextSimpleStarter/issues"
+    "url": "https://github.com/Vinicius1992-ms/CA2-Web/issues"
   },
-  "homepage": "https://github.com/gitpod-io/NextSimpleStarter#readme",
+  "homepage": "https://github.com/Vinicius1992-ms/CA2-Web#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "del": "^5.1.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-autosanitizer": "^1.0.1",
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "mongoose": "^5.9.10",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "path": "^0.12.7",
-    "uploads": "0.0.1"
+    "uploads": "0.0.1",
+    "xml-js": "^1.6.11",
+    "xml2js": "^0.4.23",
+    "xslt-processor": "^0.11.5"
   }
 }
