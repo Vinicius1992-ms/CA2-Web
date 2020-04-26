@@ -5,11 +5,11 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server1.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vinicius1992-ms/CA2-Web.git"
+    "url": "git+https://github.com/Vinicius1992-ms/CA2-Web"
   },
   "author": "Vinicius Martins",
   "license": "MIT",
