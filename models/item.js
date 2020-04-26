@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var itemSchema = new mongoose.Schema({ 
-    title: { 
+    Select: { 
         type: String,
         enum: ['HOT BEVERAGE', 'COLD BEVERAGE', 'FOOD']
     },
