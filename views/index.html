@@ -26,44 +26,7 @@
             });
         });
     </script>
-<<<<<<< HEAD
-=======
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-      var myArray = []  
-      const deleteUrl = "https://3000-ec06c740-8ac7-4595-9c7e-28e02ee7ce3b.ws-eu01.gitpod.io/Items"
-      var cid ="";
-
-    function buildTable() {
-        $.ajax({
-            method:'GET',
-            url:'/item',
-            success: function(response) {
-                console.log(response)
-                response['live'] = false;
-                myArray = response;
-                buildTable(myArray);
-                console.log(myArray) 
-            }
-        })
-    }
-    function createItem() {
-         let select: $('#selectInput').val();
-         let Item: $('#itemInput').val();
-         let price: $('#priceInput').val();
-       
-    ]
-    console.log(data)
-
-    $.post('/item',data, function(response) {
-        buildTable()
-    })
-    
-   
-}
- </script>
->>>>>>> 0d5f7a192ffd7907cd5390590c1263649853b64b
 </head>
 
 <body>
@@ -109,11 +72,9 @@
 					</div>
 					<button type="button" id="submitButton" class="btn btn-primary btn-block" onclick="createItem()">Submit</button>
 				</form>
-<<<<<<< HEAD
                     <button id="delete" class="btn btn-block btn-danger"  >Delete</button>
-=======
-                    <button id="delete" class="btn btn-block btn-danger" onclick="">Delete</button>
->>>>>>> 0d5f7a192ffd7907cd5390590c1263649853b64b
+
+            
                     <p class="text-muted">select from the from the list above to delete an entree.</p>
                 <form>
                     <div class="input-group">

@@ -14,11 +14,11 @@ exports.createItem = function(req, res) {
 };
 
 exports.getItems = function(req, res) {
-  Item.find({}, function (err, item) {
+  Item.find({}, function (err, items) {
     if (err) {
       res.status(400).json(err); 
     } 
-    res.json(item);
+    res.json(items);
   }); 
 };
 
