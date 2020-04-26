@@ -7,10 +7,16 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>CCT Cafe</title>
+
+    	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+	    <script src="sketch.js"></script>
+
+
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/CCTcafestyle.css" rel="stylesheet">
     <script src="js/CCTcafecode.js"></script>
+    
      <script>
         window.addEventListener("load", function() {
             document.forms[1].txtBillAmt.value = calculateBill('menuTable');
@@ -24,6 +30,40 @@
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      var myArray = []  
+      const deleteUrl = "https://3000-ec06c740-8ac7-4595-9c7e-28e02ee7ce3b.ws-eu01.gitpod.io/Items"
+      var cid ="";
+
+    function getDataAndBuildTable() {
+        $.ajax({
+            method:'GET',
+            url:'/item',
+            success: function(response) {
+                console.log(response)
+                response['live'] = false;
+                myArray = response;
+                buildTable(myArray);
+                console.log(myArray) 
+            }
+        })
+    }
+    function createItem() {
+    var section = []
+        gender: $('#create-gender').val(),
+        Item: $('#create-Item').val(),
+        price: $('#create-Price').val(),
+       
+    ]
+    console.log(data)
+
+    $.post('/item',data, function(response) {
+        getDataAndBuildTable()
+    })
+    
+   
+}
+ </script>
 </head>
 
 <body>
@@ -35,9 +75,7 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/Vinicius1992-ms/CA2-Web" target="_blank">Project Repository</a></li>
 				</ul>
 			</div>
 		</div>
@@ -55,27 +93,24 @@
 				<h1 class="mt-5">Welcome to CCT Cafe</h1>
 				<p class="lead">Nothing better than a coffee to get your day started.</p>
 			</div>
-			<div id="results" class="col-lg-8 text-center order-3"></div>
-			<div class="col-lg-4 text-center order-2">
-				<form enctype="application/json" action="/post/json" method="post">
-					<div class="form-group">
-						<select class="form-control" name="sec_n">
-							<option value="0">HOT BEVERAGES</option>
-							<option value="1">COLD BEVERAGES</option>
-							<option value="2">SANDWICHES</option>
-                            
+		
+			        <div class="form-group">
+                        <select class="form-control" id="typeInput">
+							<option>HOT BEVERAGES</option>
+							<option>COLD BEVERAGES</option>
+							<option>FOOD</option>
 						</select>
 					</div>
 					<div class="form-group">
-						<input class="form-control" type="text" name="item" placeholder="Item">
+						<input class="form-control" type="text" name="creatItem" placeholder="Item">
 					</div>
 					<div class="form-group">
 						<input class="form-control" type="text" name="price" placeholder="Price">
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Submit</button>
+					<button type="button" id="submitButton" class="btn btn-primary btn-block" onclick="addItem()">Submit</button>
 				</form>
                     <button id="delete" class="btn btn-block btn-danger">Delete</button>
-                    <p class="text-muted">select from the from the list beside to delete an entree.</p>
+                    <p class="text-muted">select from the from the list above to delete an entree.</p>
                 <form>
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -96,14 +131,15 @@
 		</div>
 	</div>
 	<footer class="footer">
-		<div class="container">	<span class="text-muted">&copy; 2019</span>
+		<div class="container">	<span class="text-muted">Vinicius Martins - 2017256 &copy; 2019</span>
 		</div>
 	</footer>
 	<!-- Bootstrap core JavaScript -->
 	<script src="jquery/jquery.min.js"></script>
 	<script src="jquery/table.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-    <script src="js/models/item.js"></script>
+    
+  
 
 </body>
 
