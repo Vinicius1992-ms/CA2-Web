@@ -8,14 +8,5 @@ router.get('/items/:id', itemCtrl.getItem);
 router.delete('/items/:id', itemCtrl.deleteItem);
 router.put('/items/:id', itemCtrl.updateItem);
 
-module.exports = router;
+module.exports.UPLOAD_PATH = 'uploads';
 
-// var router = express();
-
-// var express = require('express'),
-// router = express.Router();
-
-// router.use(express.static(path.resolve(__dirname, 'views')));
-// router.use(express.urlencoded({extended: true}));
-// router.use(express.json());
-// router.use(expAutoSan.all);

@@ -1,9 +1,10 @@
-var Item = require('./models/item.js')
+var Item = require('./models/item')
+path = require('path');
 
 exports.createItem = function(req, res) { 
    
     var newitem = new Item(req.body);
-    newitem.save(function (err, user) { 
+    newitem.save(function (err, item) { 
         if (err) { 
             res.status(400).json(err);
         }
